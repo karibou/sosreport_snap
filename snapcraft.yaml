@@ -1,4 +1,4 @@
-name: sosreport
+name: sosreport-hopem
 version: "3.3-1"
 summary: Set of tools to gather troubleshooting data from a system.
 description: Sos is a set of tools that gathers information about system
@@ -10,7 +10,6 @@ confinement: devmode
 apps:
   sosreport:
     command: sosreport
-    plugs: [home]
 
 parts:
   sos-src:
