@@ -1,0 +1,20 @@
+name: sosreport
+version: "3.3-1"
+summary: Set of tools to gather troubleshooting data from a system.
+description: Sos is a set of tools that gathers information about system
+ hardware and configuration. The information can then be used for
+ diagnostic purposes and debugging. Sos is commonly used to help
+ support technicians and developers.
+confinement: devmode
+
+apps:
+  sosreport:
+    command: sosreport
+    plugs: [home]
+
+parts:
+  sos-src:
+    plugin: make 
+    source: https://github.com/karibou/sosreport.git
+
+
