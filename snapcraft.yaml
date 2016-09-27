@@ -13,7 +13,8 @@ apps:
 
 parts:
   sos-src:
-    plugin: make 
-    source: https://github.com/karibou/sosreport.git
+    plugin: make
+    source: https://github.com/sosreport/sosreport.git
+    build-packages: [python3-nose, python-sphinx, gettext, python3-six]
 
 
