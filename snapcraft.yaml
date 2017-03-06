@@ -1,4 +1,4 @@
-name: sosreport-hopem
+name: sosreport
 version: "3.3-1"
 summary: Set of tools to gather troubleshooting data from a system.
 description: Sos is a set of tools that gathers information about system
@@ -9,12 +9,12 @@ confinement: devmode
 
 apps:
   sosreport:
-    command: sosreport
+    command: sosreport --config-file $SNAP/etc/sos.conf
 
 parts:
   sos-src:
-    plugin: make
     source: https://github.com/sosreport/sosreport.git
-    build-packages: [python3-nose, python-sphinx, gettext, python3-six]
-
-
+    plugin: python
+    python-version: "python2"
+    prepare: make updateversion
+    install: cp ./sos.conf $SNAPCRAFT_PART_INSTALL/etc/sos.conf
